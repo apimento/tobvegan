@@ -4,25 +4,24 @@ from django.http import HttpResponse
 
 # Create your views here.
 
-class Cat: 
-    def __init__(self, name, breed, description, age):
+class Restaurant: 
+    def __init__(self, name, contact, pricePoint, style, menuHighlights, delivery, events):
         self.name = name 
-        self.breed = breed 
-        self.age = age 
-        self.description = description 
-        self.age = age 
+        self.contact = contact 
+        self.pricePoint = pricePoint  
+        self.style = style
+        self.menuHighlights = menuHighlights  
+        self.delivery = delivery 
+        self.events = events
 
-cats = [ 
-    Cat('Lolo' , "Tabby", "foul little demon", 3),
-    Cat('Sachi', "Tortoise Shell", "diluted tortoise shell", 0),
-    Cat('Raven', 'black tripod', '3 legged cat', 4)
+restaurants = [ 
 ]
 
 def home(request): 
-    return HttpResponse('<h1> Cat Collector </h1>') 
+    return HttpResponse('<h1> T.O b Vegan </h1>') 
 
 def about(request): 
-    return render(request, 'about.html') 
+    return render(request,'about.html') 
 
 def restaurants_index(request): 
-    return render(request, 'restaurants/index.html', {'cats': cats})
+    return render(request, 'restaurants/index.html', {'restaurants': restaurants})

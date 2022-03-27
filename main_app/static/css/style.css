@@ -1,0 +1,28 @@
+body { 
+    background-image: linear-gradient(rgb(159, 255, 183), rgb(152, 204, 146));
+    display: flex; 
+    min-height: 100vh; 
+    flex-direction: column; 
+    color: rgb(5, 121, 5);
+}
+
+main { 
+    flex: 1 0 auto; 
+    color: rgb(5, 121, 5);
+} 
+
+.page-footer { 
+    background-image: linear-gradient(rgb(78, 223, 114), rgb(26, 136, 12));
+    padding-top: 0;
+    text-align: right; 
+    color:cornsilk
+} 
+
+.nav-wrapper { 
+    background-image: linear-gradient(rgb(78, 223, 114), rgb(26, 136, 12));  
+    color:cornsilk
+} 
+
+.logo { 
+    font-size: 33px;
+}

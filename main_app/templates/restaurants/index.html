@@ -2,22 +2,30 @@
 
 {% block content %} 
 
-<h1>Cat List</h1> 
+<h1>Toronto's Best Vegan Restaurants</h1> 
 
-{% for cat in cats  %} 
+{% for restaurant in restaurants  %} 
 
 <div class="card"> 
     <div class ="card-content"> 
-        <span class ="card-title"> {{cat.name}} </span>
-        <p>Breed: {{cat.breed}}</p> 
-        <p>Description: {{cat.description}}</p> 
+        <span class ="card-title"> {{restaurant.name}} </span>
+        <p>Price Point: {{restaurant.pricePoint}}</p>
+        <p>Contact Us: {{restaurant.contact}}</p> 
+        <p>Style of Cuisine: {{restaurant.style}}</p>   
+        <p>Menu Highlights: {{restaurant.menuHighlights}}</p>
 
-        {% if cat.age > 0 %} 
-            <p>Age: {{cat.age}}</p>
+
+        {% if restaurant.delivery == "True" %} 
+            <p>We deliver!</p>
         {% else %} 
-            <p>Age: Kitten</p>
+            <p>Sorry, we don't deliver</p>
+        {% endif %} 
+
+        {% if restaurant.events == "True" %} 
+            <p>Let's host your event! Contact us for more info!</p>
+        {% else %} 
+            <p>Sorry, we don't do events</p>
         {% endif %}
-        
     </div>
 </div>
 
