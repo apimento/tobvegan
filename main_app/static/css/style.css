@@ -1,5 +1,7 @@
 body { 
     background-image:url("https://smartcdn.gprod.postmedia.digital/healthing/wp-content/uploads/2021/09/avocado-abdominal-fat.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex; 
     min-height: 100vh; 
     flex-direction: column; 
@@ -43,6 +45,6 @@ main {
 } 
 
 .title { 
-    color: rgb(194, 245, 194); 
+    color: rgb(251, 255, 230); 
     text-shadow: 2px 2px 2px #000000 
 }
