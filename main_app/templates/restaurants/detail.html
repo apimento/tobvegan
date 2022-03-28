@@ -2,7 +2,7 @@
 
 {% block content %} 
 
-<h1>{{restaurant.name}}</h1> 
+<h1 class="title">{{restaurant.name}}</h1> 
 <hr>
 
 
@@ -17,13 +17,13 @@
         {% if restaurant.delivery == "True" %} 
             <p>We deliver!</p>
         {% else %} 
-            <p>Sorry, we don't deliver</p>
+            <p>Sorry, they don't deliver</p>
         {% endif %} 
 
         {% if restaurant.events == "True" %} 
-            <p>Let's host your event! Contact us for more info!</p>
+            <p>Let {{restaurant.name}} host your event! Contact them for more info!</p>
         {% else %} 
-            <p>Sorry, we don't do events</p>
+            <p>Sorry, they don't do events</p>
         {% endif %}
     </div>
 </div>

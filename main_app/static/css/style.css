@@ -1,28 +1,43 @@
 body { 
-    background-image: linear-gradient(rgb(159, 255, 183), rgb(152, 204, 146));
+    background-image:url("https://smartcdn.gprod.postmedia.digital/healthing/wp-content/uploads/2021/09/avocado-abdominal-fat.jpg");
     display: flex; 
     min-height: 100vh; 
     flex-direction: column; 
-    color: rgb(5, 121, 5);
+    /* color: rgb(194, 245, 194);  */
+    /* text-shadow: 2em 2em  6em rgb(4, 92, 4); */
 }
 
 main { 
     flex: 1 0 auto; 
-    color: rgb(5, 121, 5);
+    /* color: rgb(5, 121, 5);  */
+    /* background-image:url("https://smartcdn.gprod.postmedia.digital/healthing/wp-content/uploads/2021/09/avocado-abdominal-fat.jpg"); */ 
+    /* color: rgb(194, 245, 194);  */ 
+    /* color:rgb(26, 136, 12) */
+    /* text-shadow: 3px 3px 5px #000000 */
 } 
 
 .page-footer { 
     background-image: linear-gradient(rgb(78, 223, 114), rgb(26, 136, 12));
     padding-top: 0;
     text-align: right; 
-    color:cornsilk
+    color:rgb(194, 245, 194)
 } 
 
 .nav-wrapper { 
     background-image: linear-gradient(rgb(78, 223, 114), rgb(26, 136, 12));  
-    color:cornsilk
+    color: rgb(194, 245, 194)
 } 
 
 .logo { 
     font-size: 33px;
+}
+
+.card { 
+    background-image: linear-gradient(rgb(194, 245, 194), rgb(209, 235, 206));
+    text-decoration: none; 
+} 
+
+.title { 
+    color: rgb(194, 245, 194); 
+    text-shadow: 2px 2px 2px #000000 
 }
