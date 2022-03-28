@@ -24,16 +24,21 @@ main {
 } 
 
 .nav-wrapper { 
-    background-image: linear-gradient(rgb(78, 223, 114), rgb(26, 136, 12));  
+    background-image: linear-gradient(rgb(161, 255, 98), rgb(26, 136, 12));  
     color: rgb(194, 245, 194)
 } 
 
 .logo { 
-    font-size: 33px;
+    font-size: 33px; 
+    color: rgb(253, 255, 152)
+} 
+
+.right { 
+    color: rgb(194, 245, 194)
 }
 
 .card { 
-    background-image: linear-gradient(rgb(194, 245, 194), rgb(209, 235, 206));
+    background-image: linear-gradient(rgb(194, 245, 194), rgb(255, 253, 140));
     text-decoration: none; 
 } 
 
