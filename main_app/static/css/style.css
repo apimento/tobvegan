@@ -22,17 +22,19 @@ main {
     background-image: linear-gradient(rgb(78, 223, 114), rgb(26, 136, 12));
     padding-top: 0;
     text-align: right; 
-    color:rgb(194, 245, 194)
+    color:rgb(194, 245, 194); 
+    opacity: 0.85;
 } 
 
 .nav-wrapper { 
     background-image: linear-gradient(rgb(161, 255, 98), rgb(26, 136, 12));  
-    color: rgb(194, 245, 194)
+    color: rgb(194, 245, 194);
+    opacity: 0.85;
 } 
 
 .logo { 
     font-size: 33px; 
-    color: rgb(253, 255, 152)
+    color: rgb(255, 255, 227)
 } 
 
 .right { 
@@ -41,8 +43,19 @@ main {
 
 .card { 
     background-image: linear-gradient(rgb(194, 245, 194), rgb(255, 253, 140));
-    text-decoration: none; 
-} 
+    text-decoration: none;  
+    opacity: 0.75;
+}  
+
+.card:hover {
+    opacity: 1;
+  } 
+
+#card-detail { 
+    background-image: linear-gradient(rgb(194, 245, 194), rgb(255, 253, 140));
+    text-decoration: none;   
+    opacity: 1;
+}
 
 .title { 
     color: rgb(251, 255, 230); 

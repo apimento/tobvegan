@@ -6,16 +6,17 @@
 <hr>
 
 
-<div class="card"> 
-    <div class ="card-content"> 
-        <p>Price Point: {{restaurant.pricePoint}}</p>
-        <p>Contact Us: {{restaurant.contact}}</p> 
+<div class="card" id="card-detail"> 
+    <div class ="card-content">  
+        <p>{{restaurant.address}} ({{restaurant.mainInt}})</p> 
+        <p>{{restaurant.website}}</p>
+        <p>Price Point: {{restaurant.pricePoint}}</p> 
         <p>Style of Cuisine: {{restaurant.style}}</p>   
-        <p>Menu Highlights: {{restaurant.menuHighlights}}</p>
+        <!-- <p>Menu Highlights: {{restaurant.menuHighlights}}</p> -->
 
 
         {% if restaurant.delivery == "True" %} 
-            <p>We deliver!</p>
+            <p>They deliver!</p>
         {% else %} 
             <p>Sorry, they don't deliver</p>
         {% endif %} 

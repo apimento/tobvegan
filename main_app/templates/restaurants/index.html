@@ -2,23 +2,22 @@
 
 {% block content %} 
 
-<h1 class="title">Toronto's Best Vegan Restaurants</h1> 
+
+<h1 class="title">Toronto's Best Vegan Restaurants</h1> </a>
 <hr>
 
 {% for restaurant in restaurants  %} 
 
 <div class="card"> 
-<a href= "{%url 'detail' restaurant.id %}">
     <div class ="card-content"> 
-        <span class ="card-title"> {{restaurant.name}} </span>
+        <span class ="card-title"> <a href= "{%url 'detail' restaurant.id %}"> {{restaurant.name}} </a> </span> </a> 
+        <p>{{restaurant.address}} ({{restaurant.mainInt}}) {{restaurant.website}} {{restaurant.phone}} </p> 
         <p>Price Point: {{restaurant.pricePoint}}</p>
-        <p>Contact Us: {{restaurant.contact}}</p> 
         <p>Style of Cuisine: {{restaurant.style}}</p>   
-        <p>Menu Highlights: {{restaurant.menuHighlights}}</p>
 
 
         {% if restaurant.delivery == "True" %} 
-            <p>We deliver!</p>
+            <p>They deliver!</p>
         {% else %} 
             <p>Sorry, they don't deliver</p>
         {% endif %} 
@@ -29,7 +28,6 @@
             <p>Sorry, they don't do events</p>
         {% endif %}
     </div>
-</a>
 </div>
 
 {% endfor %}
