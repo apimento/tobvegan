@@ -26,8 +26,42 @@
         {% else %} 
             <p>Sorry, they don't do events</p>
         {% endif %}
+    </div> 
+
+    <div class="card-action" id="card-detail">
+        <a href="{% url 'restaurant_update' restaurant.id %}"> Edit </a> 
+        <a href="{% url 'restaurant_delete' restaurant.id %}"> Delete </a>
     </div>
 </div>
 
+
+<div> 
+
+    <form method="post" action="{% url 'add_menuHighlight' restaurant.id %}">
+
+        {% csrf_token %} 
+        {{ MenuHighlight_form.as_p }} 
+        <input type="submit" class="btn" value="Add Highlights">
+
+    </form>
+
+    <table id="card-detail"> 
+        <thead> 
+            <tr> 
+                <th>Name</th> 
+                <th>Image</th>
+            </tr>
+        </thead> 
+
+        <tbody> 
+            {% for menuHighlight in restaurant.menuHighlight_set.all %}
+            <tr> 
+                <td>{{menuHighlights.name}}</td> 
+                <td>{{menuHighlights.image}}</td> 
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 
 {% endblock %}
