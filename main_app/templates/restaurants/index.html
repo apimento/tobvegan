@@ -16,13 +16,13 @@
         <p>Style of Cuisine: {{restaurant.style}}</p>   
 
 
-        {% if restaurant.delivery == "True" %} 
+        {% if restaurant.delivery %} 
             <p>They deliver!</p>
         {% else %} 
             <p>Sorry, they don't deliver</p>
         {% endif %} 
 
-        {% if restaurant.events == "True" %} 
+        {% if restaurant.events %} 
             <p>Let {{restaurant.name}} host your event! Contact them for more info!</p>
         {% else %} 
             <p>Sorry, they don't do events</p>

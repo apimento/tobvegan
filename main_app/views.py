@@ -36,7 +36,9 @@ def restaurants_index(request):
 
 def restaurants_details(request, restaurant_id):
     restaurant = Restaurant.objects.get(id=restaurant_id) 
-    return render (request, 'restaurants/detail.html', {'restaurant': restaurant}) 
+    MenuHighlight_form = MenuHighlightsForm()
+    print(restaurant.menuhighlights_set.all())
+    return render (request, 'restaurants/detail.html', {'restaurant': restaurant, "MenuHighlight_form": MenuHighlight_form}) 
 
 def add_menuHighlight(request, restaurant_id): 
     form = MenuHighlightsForm(request.POST) 
@@ -44,7 +46,12 @@ def add_menuHighlight(request, restaurant_id):
         new_menuHighlight = form.save(commit=False)
         new_menuHighlight.restaurant_id = restaurant_id
         new_menuHighlight.save()
-    return redirect('detail', restaurant_id=restaurant_id)
+    return redirect('detail', restaurant_id=restaurant_id) 
+
+class MenuHighlightDelete(DeleteView): 
+    model = Restaurant 
+    success_url = "restaurants/<int:restaurant_id>/"
+
 
 class RestaurantUpdate(UpdateView): 
     model = Restaurant 

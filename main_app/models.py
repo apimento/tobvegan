@@ -1,7 +1,11 @@
 from django.db import models 
 from django.urls import reverse 
 
-# Create your models here.
+# Create your models here. 
+
+class Style(models.Model): 
+    style = models.CharField(max_length= 200) 
+
 
 class Restaurant(models.Model): 
     name = models.CharField(max_length=100) 
@@ -13,7 +17,8 @@ class Restaurant(models.Model):
     webite= models.CharField(max_length=200) 
     Instagram = models.CharField(max_length=200)
     delivery= models.BooleanField()
-    events = models.BooleanField()  
+    events = models.BooleanField()   
+    # style = models.ManyToManyField(Style)
 
     def get_absolute_url(self): 
         return reverse('detail', kwargs = {'restaurant_id': self.id}) 
@@ -26,6 +31,3 @@ class MenuHighlights(models.Model):
     name = models.CharField(max_length=200)
     image = models.CharField(max_length=200) 
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
-
-    def __str__(self): 
-        return f"{self.get_meal_display()} on {self.date}"  
