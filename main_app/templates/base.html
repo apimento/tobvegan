@@ -27,10 +27,32 @@
         <ul class="right">
             <li>
               <a href="{%url 'about' %}"> About </a>
-            </li>
+            </li> 
+            {% if user.is_authenticated %}
             <li>
                 <a href="{%url 'index' %}">Restaurants</a>
+            </li> 
+
+            <li> 
+              <a href="{% url 'logout' %}">Log out</a> 
+            </li> 
+
+            Hi {{user.username}}
+            
+            {% else %} 
+
+            <li> 
+              <a href="{% url 'signup' %}">Sign Up</a>
             </li>
+
+
+            <li> 
+              <a href="{% url 'login' %}">Login</a> 
+            </li> 
+
+            {% endif %}
+
+
         </ul>
         </div>
       </nav>

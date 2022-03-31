@@ -1,5 +1,6 @@
 from django.db import models 
-from django.urls import reverse 
+from django.urls import reverse  
+from django.contrib.auth.models import User
 
 # Create your models here. 
 
@@ -17,7 +18,8 @@ class Restaurant(models.Model):
     webite= models.CharField(max_length=200) 
     Instagram = models.CharField(max_length=200)
     delivery= models.BooleanField()
-    events = models.BooleanField()   
+    events = models.BooleanField()    
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     # style = models.ManyToManyField(Style)
 
     def get_absolute_url(self): 
