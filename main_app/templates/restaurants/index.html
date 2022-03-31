@@ -6,6 +6,8 @@
 <h1 class="title">Toronto's Best Vegan Restaurants</h1> </a>
 <hr>
 
+<div class="btn" id="indentBtn2"> <a href="{% url 'restaurant_create' %}"> Add A Restaurant </a> </div>
+
 {% for restaurant in restaurants  %} 
 
 <div class="card"> 
@@ -32,4 +34,5 @@
 
 {% endfor %}
 
-{% endblock %}
+{% endblock %} 
+

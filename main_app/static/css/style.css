@@ -69,7 +69,14 @@ main {
 } 
 
 #indentBtn{ 
-    margin-left: 4em;
-    padding-right: 5em; 
-    padding-left: 5em;
+    display:flex;
+    width: max-content;
+} 
+
+#indentBtn2{
+    display: flex;
+    /* padding-right: 5em; 
+    padding-left: 5em; 
+    margin-left: 27em;  */
+    text-decoration: none;
 }
