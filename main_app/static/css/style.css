@@ -57,7 +57,19 @@ main {
     opacity: 1;
 }
 
+#highlightForm{ 
+    background-image: linear-gradient(rgb(194, 245, 194), rgb(255, 253, 140));
+    color: black;
+    opacity: 1;
+}
+
 .title { 
     color: rgb(251, 255, 230); 
     text-shadow: 2px 2px 2px #000000 
+} 
+
+#indentBtn{ 
+    margin-left: 4em;
+    padding-right: 5em; 
+    padding-left: 5em;
 }

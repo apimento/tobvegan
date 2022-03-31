@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect 
 from django.http import HttpResponse 
-from .models import Restaurant 
+from .models import Restaurant, MenuHighlights
 from django.views.generic.edit import CreateView, UpdateView, DeleteView 
 from .forms import MenuHighlightsForm
 
@@ -48,10 +48,16 @@ def add_menuHighlight(request, restaurant_id):
         new_menuHighlight.save()
     return redirect('detail', restaurant_id=restaurant_id) 
 
-class MenuHighlightDelete(DeleteView): 
-    model = Restaurant 
-    success_url = "restaurants/<int:restaurant_id>/"
+def delete_Menuhighlight(request, restaurant_id, menuhighlight_id): 
+    menuHighlight = MenuHighlights.objects.get(id=menuhighlight_id)
+    menuHighlight.delete() 
+    return render(request, 'restaurants/detail.html', restaurant_id=restaurant_id, menuhighlight_id=menuhighlight_id )
 
+
+
+#class MenuHighlightDelete(DeleteView): 
+#     model = MenuHighlights 
+#     success_url = "restaurants/<int:restaurant_id>/"
 
 class RestaurantUpdate(UpdateView): 
     model = Restaurant 

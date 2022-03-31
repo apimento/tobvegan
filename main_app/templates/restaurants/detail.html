@@ -37,12 +37,13 @@
 
 <div> 
 
-    <form method="post" action="{% url 'add_menuHighlight' restaurant.id %}" id="card-detail">
+    <form method="post" action="{% url 'add_menuHighlight' restaurant.id %}" id="highlightForm">
 
         {% csrf_token %} 
         {{ MenuHighlight_form.as_p }} 
-        <input type="submit" class="btn" value="Add Highlights">
-
+        <input type="submit" class="btn" value="Add Highlight" id="indentBtn">
+        <br>
+        <br>
     </form>
 
     <br>
@@ -53,7 +54,14 @@
             <tr> 
                 <th class="center">{{menuHighlight.name}}</th> 
                 <td class="center"><img width="350px" height="300px" src="{{menuHighlight.image}}" alt="img"> </td>  
-
+                <td>
+                    <div class="card-action"> 
+                        <form action= "{% url 'delete_menuhighlight' menuHighlight.id %}" method="post"> 
+                            {% csrf_token %} 
+                            <button type="submit" class="btn"> Remove </button>
+                        </form>
+                    </div>
+                </td>           
             </tr>
             {% endfor %}
         </tbody>

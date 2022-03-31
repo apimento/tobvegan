@@ -10,6 +10,6 @@ urlpatterns = [
     path('restaurants/<int:pk>/update/', views.RestaurantUpdate.as_view(), name="restaurant_update"),
     path('restaurants/<int:pk>/delete/', views.RestaurantDelete.as_view(), name="restaurant_delete"),
     path('restaurants/<int:restaurant_id>/add_menuHighlight', views.add_menuHighlight, name="add_menuHighlight"),   
-    # path('restaurants/<int:restaurant_id>/delete_menuHighlight', views.MenuHighlightDelete.as_view(), name="delete_menuHighlight") 
+    path('restaurants/<int:restaurant_id>/delete_menuHighlight', views.delete_Menuhighlight, name="delete_menuhighlight") 
 
 ]
