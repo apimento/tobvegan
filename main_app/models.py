@@ -15,7 +15,7 @@ class Restaurant(models.Model):
     address= models.CharField (max_length=200)   
     mainInt = models.CharField (max_length=200) 
     phone= models.CharField(max_length=13)  
-    webite= models.CharField(max_length=200) 
+    website= models.CharField(max_length=200) 
     Instagram = models.CharField(max_length=200)
     delivery= models.BooleanField()
     events = models.BooleanField()    

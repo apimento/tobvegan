@@ -27,7 +27,10 @@ import os
 
 class RestaurantCreate(LoginRequiredMixin, CreateView): 
     model = Restaurant 
-    fields = '__all__'
+    fields = ['name','pricePoint','style', 'address', 'mainInt', 'phone', 'website', 'Instagram', 'delivery','events']
+    def form_valid(self,form): 
+        form.instance.user = self.request.user 
+        return super().form_valid(form)
 
 def home(request): 
     return HttpResponse('<h1> T.O b Vegan </h1>') 
@@ -84,7 +87,7 @@ def signup(request):
         if form.is_valid(): 
             user = form.save()  
             login(request, user)
-            return redirect('cats/index') 
+            return redirect('restaurants/index') 
         else: 
             error_message= "Invalid sign-up. Please try again" 
     form = UserCreationForm() 
